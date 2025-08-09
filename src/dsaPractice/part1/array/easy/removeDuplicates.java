@@ -2,7 +2,7 @@ package dsaPractice.part1.array.easy;
 
 public class removeDuplicates {
 
-    public static int removeO(int nums[]){  // optimised : guves unique count & update the array in unique order
+    public static int removeO(int nums[]){  // optimised : gives unique count & update the array in unique order
         int unique=0;
 
         for (int i = 1; i < nums.length-1; i++) {
