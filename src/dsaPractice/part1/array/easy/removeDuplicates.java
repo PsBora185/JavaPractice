@@ -2,7 +2,7 @@ package dsaPractice.part1.array.easy;
 
 public class removeDuplicates {
 
-    public static int removeO(int nums[]){  // optimised : gives unique count & update the array in unique order
+    public static int removeO(int[] nums){  // optimised : gives unique count & update the array in unique order
         int unique=0;
 
         for (int i = 1; i < nums.length-1; i++) {
@@ -14,7 +14,7 @@ public class removeDuplicates {
         return unique;
     }
 
-    public static int remove(int nums[]) {
+    public static int remove(int[] nums) {
         int count = 0;
 
         for (int i = 0; i < nums.length - 1; i++) {
@@ -32,7 +32,7 @@ public class removeDuplicates {
 
     public static void main(String[] args) {
 
-        int arr[] = {-2,2,4,4,4,4,5,5};
+        int[] arr = {-2,2,4,4,4,4,5,5};
 
         int u = remove(arr);
         System.out.println("number of unique elements : " + u);
