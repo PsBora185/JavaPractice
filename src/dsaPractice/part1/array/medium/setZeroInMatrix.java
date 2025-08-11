@@ -3,7 +3,46 @@ package dsaPractice.part1.array.medium;
 public class setZeroInMatrix {
 
 
+    public static void setZeroO(int[][] matrix) {
 
+        int row = matrix.length;
+        int col = matrix[0].length;
+        int cols1 = -1;
+
+        // mark first rwo and col for identifying which rwo will be 0 cuz of existing 0
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
+                if (matrix[i][j] == 0) {
+                    matrix[i][0] = 0; // rows mark
+                    if (j == 0)// cols mark
+                        cols1 = 0;
+                    else
+                        matrix[0][j] = 0;
+                }
+            }
+        }
+
+        // check for elements except rows & cols that are marked
+        for (int i = 1; i < row; i++) {
+            for (int j = 1; j < col; j++) {
+                if (matrix[i][0] == 0 || matrix[0][j] == 0)
+                    matrix[i][j] = 0;
+            }
+        }
+
+        // remaining
+
+        for (int i = 0; i < matrix[0].length; i++) {
+            if (matrix[0][0] == 0)
+                matrix[0][i] = 0;
+        }
+
+        for (int i = 0; i < matrix.length; i++) {
+            if (cols1 == 0)
+                matrix[i][0] = 0;
+        }
+
+    }
 
 
     public static void setZeroB(int[][] matrix) { // brute  O(n*m) * O(n+m) + O(n*m) --> O((n*m)^2)
